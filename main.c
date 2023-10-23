@@ -26,11 +26,11 @@ int main()
         return 1;
     }
 
-	pid_t cpid = fork();
-	if (cpid == -1) {
-		perror("Failed to fork the process.");
+    pid_t cpid = fork();
+    if (cpid == -1) {
+        perror("Failed to fork the process.");
         return 1;
-	}
+    }
 
     if (cpid == 0) {
         return parent_process(pipefd[1]);
